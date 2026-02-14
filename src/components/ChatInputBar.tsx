@@ -9,15 +9,25 @@ export function ChatInputBar() {
   const onSend = async () => {
     // ★onsendの中身を書かせるか
     if (!message.trim()) return;
+    const currentMessage = message;
     const tableName = process.env.NEXT_PUBLIC_SUPABASE_TABLE_NAME;
     if (!tableName) return;
     const client = createSupabaseBrowserClient();
     const { error } = await client.from(tableName).insert({
       sender: "user",
       message_type: "text",
-      content: message,
+      content: currentMessage,
     });
     if (!error) setMessage("");
+
+    //★ ここでLLMにリクエストを送るコードを書かせる
+    await fetch("/api/llm-response", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ message: currentMessage }),
+    });
   };
 
   return (
