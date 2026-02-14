@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { SYSTEM_PROMPT } from "./prompt";
+import { createSupabaseServerClient } from "@/lib/supabaseServer";
 
 type LlmResponseRequestBody = {
   message?: string;
@@ -34,8 +35,19 @@ export async function POST(req: Request) {
     }
   );
   const data = await response.json();
-  console.log(data?.candidates?.[0]?.content?.parts?.[0]?.text ?? "");
+  const llmText = data?.candidates?.[0]?.content?.parts?.[0]?.text ?? "";
+  console.log(llmText);
   
+  // ★Supabaseに保存
+  const tableName = process.env.NEXT_PUBLIC_SUPABASE_TABLE_NAME;
+  const client = createSupabaseServerClient();
+  if (tableName && client) {
+    await client.from(tableName).insert({
+      sender: "other",
+      message_type: "text",
+      content: llmText,
+    });
+  }
 
   return NextResponse.json({ ok: true });
 }
