@@ -1,6 +1,6 @@
-import { ChatHeader } from "@/components/chat/ChatHeader";
-import { ChatInputBar } from "@/components/chat/ChatInputBar";
-import { ChatMessageList } from "@/components/chat/ChatMessageList";
+import { ChatHeader } from "@/components/ChatHeader";
+import { ChatInputBar } from "@/components/ChatInputBar";
+import { ChatMessageList } from "@/components/ChatMessageList";
 import { chatMockMessages, chatMockMeta } from "@/data/chatMockData";
 
 export default function Home() {
