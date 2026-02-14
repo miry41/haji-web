@@ -1,5 +1,5 @@
 // ==============================================
-// !!! 初期化処理部: 触らないでください !!!
+// !!! 触らないでください !!!
 // ==============================================
 import { NextResponse } from "next/server";
 import type { ChatMessage } from "@/components/ChatMessageList";
