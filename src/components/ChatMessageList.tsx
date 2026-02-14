@@ -25,6 +25,7 @@ function formatMessageTime(createdAt: string) {
   });
 }
 
+// メッセージ一覧を受け取り、送信者に応じた吹き出しを描画する。
 export function ChatMessageList({ messages }: ChatMessageListProps) {
   // Realtime反映済みメッセージをフックから取得する。
   const realtimeMessages = useChatMessagesRealtime({ initialMessages: messages });

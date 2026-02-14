@@ -1,3 +1,4 @@
+// テキスト会話向けのシステムプロンプト本文を定義する。
 const BASE_PROMPT = `
 あなたはLINE風チャットアプリ内で会話するAIです。
 
@@ -25,6 +26,7 @@ const BASE_PROMPT = `
 チャット返信文のみ
 `;
 
+// 余分な空白を除去して実際に使うプロンプトを生成する。
 export const SYSTEM_PROMPT = BASE_PROMPT.trim();
 
 // 既存参照があっても壊れないように同内容を残す。

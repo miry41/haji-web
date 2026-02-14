@@ -18,6 +18,7 @@ export const metadata: Metadata = {
   description: "はじめてのWeb開発 - AIとチャットするアプリを作ってみよう！",
 };
 
+// 全ページ共通の HTML 骨組みを提供する。
 export default function RootLayout({
   children,
 }: Readonly<{
