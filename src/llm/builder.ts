@@ -1,3 +1,7 @@
+// ==============================================
+// !!! 触らないでください !!!
+// ==============================================
+
 import { SYSTEM_PROMPT } from "./promptForText";
 import { SYSTEM_PROMPT_FOR_IMAGE } from "./promptForImage";
 
