@@ -1,10 +1,5 @@
-// 取得トークの上限数
-const lim = 20 as number;
-
-
-
 // ==============================================
-// !!! 会話履歴取得部: ここより下は触らないでください !!!
+// !!! 触らないでください !!!
 // ==============================================
 import { chatMockMessages, chatTableName } from "@/data/chatMockData";
 import { createSupabaseServerClient } from "@/lib/supabaseServer";
@@ -24,7 +19,7 @@ function toLlmMessage(row: DbMessageRow): ChatMessage | null {
   };
 }
 
-export async function getMessages(limit = lim): Promise<ChatMessage[]> {
+export async function getMessages(limit = 20): Promise<ChatMessage[]> {
   const mockHistory = chatMockMessages
     .map((row) => toLlmMessage(row))
     .filter((row): row is ChatMessage => row !== null)
