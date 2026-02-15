@@ -7,14 +7,9 @@ export function ChatMessageOther({
   content,
   timeLabel,
 }: ChatMessageOtherProps) {
-  //{console.log(content);}
   return (
-    // ★returnの中身
+    // TODO: 相手側のメッセージを表示する
     <div className="flex justify-start">
-      <div className="max-w-[78%] rounded-2xl rounded-bl-md bg-white px-3 py-2 text-sm text-zinc-800 shadow-sm">
-          <p>{content}</p>
-        <p className="mt-1 text-right text-[10px] text-zinc-500">{timeLabel}</p>
-      </div>
     </div>
   );
 }
