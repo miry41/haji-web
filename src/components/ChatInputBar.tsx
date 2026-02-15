@@ -10,6 +10,15 @@ export function ChatInputBar() {
     // ★onsendの中身を書かせるか
     if (!message.trim()) return;
     const currentMessage = message;
+   
+    /*
+    const res = await fetch("api/helth", {
+      method: "GET",
+    });
+    console.log(res.ok);
+    */
+
+    // ★onsendの中身を書かせるか
     const tableName = process.env.NEXT_PUBLIC_SUPABASE_TABLE_NAME;
     if (!tableName) return;
     const client = createSupabaseBrowserClient();

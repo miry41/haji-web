@@ -7,6 +7,7 @@ export function ChatMessageOther({
   content,
   timeLabel,
 }: ChatMessageOtherProps) {
+  //{console.log(content);}
   return (
     // ★returnの中身
     <div className="flex justify-start">
