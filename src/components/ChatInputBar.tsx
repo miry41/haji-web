@@ -7,21 +7,19 @@ export function ChatInputBar() {
   const [message, setMessage] = useState("");
 
   const onSend = async () => {
-    // ★onsendの中身を書かせるか
     if (!message.trim()) return;
     const currentMessage = message;
    
     // TODO2: APIを叩くコードを書く
 
 
-
+    // TODO7: supabaseに保存するためのSQLを書く（フロント）
+    /*
     const tableName = process.env.NEXT_PUBLIC_SUPABASE_TABLE_NAME;
     if (!tableName) return;
     const client = createSupabaseBrowserClient();
     const { error } = await client.from(tableName).insert({
-      sender: "user",
-      message_type: "text",
-      content: currentMessage,
+      // ここにSQLを書く
     });
     if (!error) setMessage("");
     */

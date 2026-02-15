@@ -21,16 +21,15 @@ export async function POST(req: Request) {
   // TODO6: Gemini APIを叩くコードを書く
   // console.log(`\n【Gemini生成テキスト】\n${data}`);
 
-  // ★Supabaseに保存
+  // TODO7: supabaseに保存するためのSQLを書く（バック）
+    /*
   const tableName = process.env.NEXT_PUBLIC_SUPABASE_TABLE_NAME;
   const client = createSupabaseServerClient();
   if (tableName && client) {
     await client.from(tableName).insert({
-      sender: "other",
-      message_type: "text",
-      content: data,
+      // ここにSQLを書く
     });
-  }
-
+    */
+   
   return NextResponse.json({ ok: true });
 }
