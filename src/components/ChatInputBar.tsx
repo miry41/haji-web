@@ -1,0 +1,57 @@
+ "use client";
+
+import { useState } from "react";
+import { createSupabaseBrowserClient } from "@/lib/supabaseBrowser";
+
+export function ChatInputBar() {
+  const [message, setMessage] = useState("");
+
+  const onSend = async () => {
+    if (!message.trim()) return;
+    const currentMessage = message;
+   
+    // TODO2: APIを叩くコードを書く
+
+
+    // TODO7: supabaseに保存するためのSQLを書く（フロント）
+    /*
+    const tableName = process.env.NEXT_PUBLIC_SUPABASE_TABLE_NAME;
+    if (!tableName) return;
+    const client = createSupabaseBrowserClient();
+    const { error } = await client.from(tableName).insert({
+      // ここにSQLを書く
+    });
+    if (!error) setMessage("");
+    */
+
+    // TODO3: llm-response APIを叩くコードを書く
+
+  };
+
+  return (
+    <footer className="border-t border-black/5 bg-white px-3 py-2">
+      <div className="flex items-center gap-2">
+        <button
+          type="button"
+          className="h-9 w-9 rounded-full bg-zinc-100 text-lg text-zinc-500"
+        >
+          ＋
+        </button>
+        <input
+          type="text"
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+          placeholder="メッセージを入力"
+          className="flex-1 rounded-full text-black border border-zinc-200 bg-zinc-50 px-4 py-2 text-sm"
+        />
+        <button
+          type="button"
+          onClick={onSend}
+          className="rounded-full bg-[#07c160] px-4 py-2 text-sm font-medium text-white"
+        >
+          送信
+        </button>
+      </div>
+    </footer>
+  );
+}
