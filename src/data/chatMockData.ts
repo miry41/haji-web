@@ -6,7 +6,7 @@ export const chatMockMeta = {
 };
 
 // テーブル名は環境変数から取得し、未設定時は空文字にする。
-export const chatTableName = process.env.SUPABASE_TABLE_NAME ?? "";
+export const chatTableName = process.env.NEXT_PUBLIC_SUPABASE_TABLE_NAME ?? "";
 
 export const chatMockMessages: ChatMessage[] = [
   {

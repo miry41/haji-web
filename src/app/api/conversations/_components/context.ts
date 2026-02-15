@@ -25,7 +25,7 @@ type CreateContextResult =
 export function createContext(messageType: MessageType, model: string): CreateContextResult {
   // 保存先テーブル名の存在を確認する。
   if (!chatTableName) {
-    return { response: errorResponse(messageType, model, "SUPABASE_TABLE_NAME is missing") };
+    return { response: errorResponse(messageType, model, "NEXT_PUBLIC_SUPABASE_TABLE_NAME is missing") };
   }
 
   // サーバー側 Supabase クライアントを初期化する。

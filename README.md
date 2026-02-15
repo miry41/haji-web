@@ -1,5 +1,5 @@
 # DataBaseスキーマ
-### テーブル名は.env.localのSUPABASE_TABLE_NAMEに格納
+### テーブル名は.env.localのNEXT_PUBLIC_SUPABASE_TABLE_NAMEに格納
 | Column       | Type      | Description | Allowed Values  | PK |
 | ------------ | --------- | ----------- | --------------- | -- |
 | id           | uuid      | レコードID      | —               | ✅  |
