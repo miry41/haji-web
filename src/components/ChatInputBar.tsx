@@ -24,15 +24,10 @@ export function ChatInputBar() {
       content: currentMessage,
     });
     if (!error) setMessage("");
+    */
 
-    //★ ここでLLMにリクエストを送るコードを書かせる
-    await fetch("/api/llm-response", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ message: currentMessage }),
-    });
+    // TODO3: llm-response APIを叩くコードを書く
+
   };
 
   return (
