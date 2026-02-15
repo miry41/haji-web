@@ -9,10 +9,9 @@ type LlmResponseRequestBody = {
 
 export async function POST(req: Request) {
   const body = (await req.json()) as LlmResponseRequestBody;
-  console.log(body)
-  const message = body.message;
-  // ★入力値のログ出力
-  console.log(`\n【入力したメッセージ】\n${message}`);
+  // TODO4: 入力テキストの抽出
+  // const message = xxx; 
+  //console.log(`\n【入力したメッセージ】\n${message}`);
 
   // ★プロンプトと入力値の結合
   const promptWithMessage = `${SYSTEM_PROMPT}${message}`;
