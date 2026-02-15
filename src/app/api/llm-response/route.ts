@@ -12,11 +12,11 @@ export async function POST(req: Request) {
   console.log(body)
   const message = body.message;
   // ★入力値のログ出力
-  console.log(message);
+  console.log(`\n【入力したメッセージ】\n${message}`);
 
   // ★プロンプトと入力値の結合
   const promptWithMessage = `${SYSTEM_PROMPT}${message}`;
-  console.log(promptWithMessage);
+  console.log(`\n【プロンプト】\n${promptWithMessage}`);
 
   // ★LLM API呼び出し
   const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
