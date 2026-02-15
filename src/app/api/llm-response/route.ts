@@ -13,9 +13,10 @@ export async function POST(req: Request) {
   // const message = xxx; 
   //console.log(`\n【入力したメッセージ】\n${message}`);
 
-  // ★プロンプトと入力値の結合
-  const promptWithMessage = `${SYSTEM_PROMPT}${message}`;
-  console.log(`\n【プロンプト】\n${promptWithMessage}`);
+  // TODO5: 既存プロンプトとの結合
+  // const promptWithMessage = xxx;
+  console.log(`\n【既存プロンプト】\n${SYSTEM_PROMPT}`);
+  // console.log(`\n【プロンプト】\n${promptWithMessage}`);
 
   // ★LLM API呼び出し
   const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
