@@ -18,18 +18,8 @@ export async function POST(req: Request) {
   console.log(`\n【既存プロンプト】\n${SYSTEM_PROMPT}`);
   // console.log(`\n【プロンプト】\n${promptWithMessage}`);
 
-  // ★LLM API呼び出し
-  const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
-
-  const response = await ai.models.generateContent({
-    model: "gemini-2.0-flash",
-    contents: promptWithMessage,
-  });
-  console.log(response.text);
-
-  const data = await response.text;
-  //const llmText = data?.candidates?.[0]?.content?.parts?.[0]?.text ?? "";
-  console.log(data);
+  // TODO6: Gemini APIを叩くコードを書く
+  // console.log(`\n【Gemini生成テキスト】\n${data}`);
 
   // ★Supabaseに保存
   const tableName = process.env.NEXT_PUBLIC_SUPABASE_TABLE_NAME;
